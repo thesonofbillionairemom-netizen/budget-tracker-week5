@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpendWise | Smart Expense Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#12b886" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="6" width="20" height="14" rx="3"/>
+      <path d="M2 10h20"/>
+      <circle cx="17" cy="15" r="1.5"/>
+    </svg>
+    <h1 class="logo">Spend<span>Wise</span></h1>
+  </div>
+  <div class="actions">
+    <button id="budgetBtn" class="btn">Set budget</button>
+    <button id="profileBtn" class="profile" title="Profile">
+      <span id="avatar">👤</span>
+      <span id="userName">Guest</span>
+    </button>
+  </div>
+</header>
+
+  <div class="layout">
+    <aside class="card">
+      <h2>Add expense</h2>
+      <form id="form">
+        <label>Name
+          <input id="item" placeholder="e.g. Groceries" required>
+        </label>
+        <label>Amount (KES)
+          <input id="amount" type="number" min="1" placeholder="0" required>
+        </label>
+        <label>Category
+          <select id="category">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Rent</option>
+            <option>Entertainment</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Date
+          <input id="date" type="date">
+        </label>
+        <button class="btn">Add expense</button>
+      </form>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <p>Remaining balance</p>
+        <h2 id="left">KES 0</h2>
+        <div class="track"><div id="bar" class="bar"></div></div>
+        <p id="msg">Click "Set budget" to begin.</p>
+      </section>
+
+      <section class="stats">
+        <div class="card"><span>Budget</span><strong id="budget">KES 0</strong></div>
+        <div class="card"><span>Total spent</span><strong id="spent">KES 0</strong></div>
+        <div class="card"><span>Transactions</span><strong id="count">0</strong></div>
+      </section>
+
+      <section class="card">
+        <h2>Recent transactions</h2>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Amount</th><th>Category</th><th>Date</th></tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Smart budgeting tips</h2>
+        <div class="video">
+        <section class="budget-video">
+   
+
+    <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/YucSWdUXrd8"
+        title="Smart budgeting tips - 50/30/20 Rule"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
